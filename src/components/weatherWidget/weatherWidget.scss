@@ -8,14 +8,15 @@
   box-shadow: 0 0 70px -10px rgba(0, 0, 0, 0.2);
   background: #d2e3fc;
   color: #222831;
-  height: 400px;
+  min-height: 400px;
 }
 
 .weather-side {
   position: relative;
   height: 100%;
   border-radius: 25px;
-  background-image: url('https://images.unsplash.com/photo-1559963110-71b394e7494d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=675&q=80');
+  background-image: var(--gradient),
+    url('https://images.unsplash.com/photo-1559963110-71b394e7494d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=675&q=80');
   width: 100%;
   -webkit-box-shadow: 0 0 20px -10px rgba(0, 0, 0, 0.2);
   box-shadow: 0 0 20px -10px rgba(0, 0, 0, 0.2);
@@ -40,15 +41,13 @@
   height: 100%;
   top: 0;
   left: 0;
-  background-image: var(--gradient);
   border-radius: 25px;
   opacity: 0.8;
 }
 
-.date-container {
-  position: absolute;
-  top: 25px;
-  left: 25px;
+.date-container,
+.weather-container {
+  padding: 20px;
 }
 
 .date-dayname {
@@ -57,13 +56,6 @@
 
 .date-day {
   display: block;
-}
-
-.weather-container {
-  position: absolute;
-  bottom: 25px;
-  left: 25px;
-  width: calc(100% - 40px);
 }
 
 .weather-icon.feather {

@@ -1,6 +1,6 @@
 # Getting Started with Weather Network
 
-**Demo Site:** [https://master.d2z6qqo23td953.amplifyapp.com/](https://master.d2z6qqo23td953.amplifyapp.com/)
+**Demo Site:** [https://master.d2u95of63u0qh1.amplifyapp.com/](https://master.d2u95of63u0qh1.amplifyapp.com/)
 
 **GitHub repository:** [https://github.com/blakenguyenvn/react-weather-application](https://github.com/blakenguyenvn/react-weather-application)
 
