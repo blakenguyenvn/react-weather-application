@@ -6,7 +6,6 @@ import DateRangeIcon from '@mui/icons-material/DateRange';
 import { getConditionByCode, ConditionType } from 'utils/weatherUtil';
 import { formatDate } from 'utils/dateTime';
 import Loader from 'components/Loader';
-import WeatherIcon from 'components/weatherIcon/WeatherIcon';
 import './weatherWidget.scss';
 
 const WidgetWrapper = styled.div`
@@ -126,7 +125,7 @@ export default function WeatherWidget(props: WeatherWidgetProp) {
                   {current && <h1 className='weather-temp'>{`${current?.temp_c}°C`}</h1>}
                   {current && (
                     <h3 className='weather-desc'>
-                      <WeatherIcon iconClass={conditionData?.iconClass} />
+                      <img src={current?.condition?.icon} alt={current?.condition?.text} />
                       {conditionData?.day}
                     </h3>
                   )}
@@ -178,7 +177,7 @@ export default function WeatherWidget(props: WeatherWidgetProp) {
                     </div>
                     <div className='week-container'>
                       <ul className='week-list'>
-                        {forecastDays?.map((forecastDay: any, index: number) => (
+                        {forecastDays?.map((forecastDay: any) => (
                           <li
                             className={
                               currentDateFormatted.date === forecastDay.date ? 'active' : ''
