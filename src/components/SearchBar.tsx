@@ -20,22 +20,22 @@ const SearchBarWrapper = styled(Stack)`
 `;
 
 interface SearchBarProp {
-  defaultValue?: any;
+  defaultValue?: string;
   options?: any;
   loading?: boolean;
-  searchCallback: any;
-  selectCallback?: any;
+  searchCallback: (query: string) => void;
+  selectCallback?: (query: string | null) => void;
 }
 
 export default function SearchBar(props: SearchBarProp) {
-  const { options, loading, searchCallback, selectCallback } = props;
+  const { defaultValue, options, loading, searchCallback, selectCallback } = props;
 
   const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    searchCallback(event.target.value);
+    searchCallback && searchCallback(event.target?.value);
   };
 
   const onSelect = (event: React.SyntheticEvent, value: string | null) => {
-    selectCallback(value);
+    selectCallback && selectCallback(value);
   };
 
   return (

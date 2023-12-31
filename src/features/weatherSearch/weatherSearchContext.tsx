@@ -16,7 +16,7 @@ export const SearchContext = createContext(initialState);
 
 export const SearchProvider = (props: any) => {
   const { children } = props;
-  const [query, setQuery] = useState('');
+  const [query, setQuery] = useState('Ho Chi Minh City');
   const [days, setDays] = useState(1);
 
   const updateSearchQuery = (text: string) => {

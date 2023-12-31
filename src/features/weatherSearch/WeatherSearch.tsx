@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { useAppSelector, useAppDispatch } from 'app/hooks';
 import Grid from '@mui/material/Grid';
 import Button from '@mui/material/Button';
@@ -37,6 +37,12 @@ export default function WeatherSearch() {
       dispatch(actions.fetchCurrentWeatherAsync({ query, days }));
     }
   };
+
+  useEffect(() => {
+    if (query) {
+      dispatch(actions.fetchCurrentWeatherAsync({ query, days }));
+    }
+  }, [])
 
   return (
     <>
